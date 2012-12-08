@@ -19,8 +19,8 @@ module Audited
 
         serialize :audited_changes
 
-        default_scope         order(:version)
-        scope :descending,    reorder("version DESC")
+        default_scope         order("id DESC")
+        scope :descending,    reorder("id DESC")
         scope :creates,       :conditions => {:action => 'create'}
         scope :updates,       :conditions => {:action => 'update'}
         scope :destroys,      :conditions => {:action => 'destroy'}
